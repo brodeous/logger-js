@@ -1,0 +1,33 @@
+{
+  "name": "@brodeous/logger",
+  "version": "1.0.0",
+  "description": "Simple javascript logger",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brodeous/logger-js.git"
+  },
+  "files": [
+      "build"
+  ],
+  "keywords": [
+    "log",
+    "logger",
+    "console",
+    "color"
+  ],
+  "author": "@brodeous",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brodeous/logger-js/issues"
+  },
+  "homepage": "https://github.com/brodeous/logger-js#readme",
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "typescript": "^5.4.5"
+  }
+}
