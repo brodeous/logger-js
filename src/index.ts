@@ -1,13 +1,14 @@
-import chalk from 'chalk';
 
-const types = {
+const types: { [key: string]: string[]} = {
     w: ['w', 'Warning', 'yellow'],
     e: ['!', 'Error', 'red'],
     i: ['i', 'DEBUG', 'cyan'],
     o: ['+', 'Okay', 'green'],
 }
 
-const styles = {
+// Most are place holders
+// Don't know when I'll be using them though
+const styles: { [key: string]: number} = {
     bold: 1,
     dim: 2,
     italic: 3,
@@ -28,21 +29,20 @@ const styles = {
 }
 
 const typeNames = Object.keys(types);
-const typeCodes = Object.values(types);
-const styleNames = Object.keys(styles);
-const styleCodes = Object.values(styles);
 
 // log('w', 'CONFIG', "message...")
 // output:
 //      [w] Warning: [CONFIG] {message}
 const log = (type: string, method: string, message: string, options = {}) => {
-      
+
     if (!typeNames.includes(type)) {
         throw `log: incorrect type given > w, e, i, o`;
     }
 
-    const t_idx = typeNames.indexOf(type);
-    const s_idx = stylesNames.map( (
+    const color = styles[types[type][2]];
+    const letter = types[type][0];
+    const status = types[type][1];
+    console.log(`\x1b[${color}m[${letter}]\x1b[0m ` + `${status}`.padEnd(8) + `: [\x1b[${styles.yellow}m${method}\x1b[0m] ${message}`);
 }
 
 export default log;
