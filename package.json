@@ -1,10 +1,11 @@
 {
-  "name": "@brodeous/logger",
+  "name": "@brodeous/logger-js",
   "version": "1.0.0",
   "description": "Simple javascript logger",
-  "main": "src/index.ts",
+  "main": "build/src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "node build/test/test.js"
   },
   "type": "module",
   "repository": {
@@ -12,13 +13,14 @@
     "url": "git+https://github.com/brodeous/logger-js.git"
   },
   "files": [
-    "build"
+    "build/src/index.js"
   ],
   "keywords": [
     "log",
     "logger",
     "console",
-    "color"
+    "color",
+    "ANSI"
   ],
   "author": "@brodeous",
   "license": "MIT",
